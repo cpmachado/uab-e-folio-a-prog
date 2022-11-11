@@ -1,14 +1,37 @@
+/* HEADERS */
 #include <stdio.h>
 #include <string.h>
 
+
+/* CONSTANTES */
 #define BUFFER 100
 
+enum estados_lamberta {
+	O = 0,
+	X = 1
+};
+
+
+/* FUNÇÕES */
+
+char
+estado_para_caracter(enum estados_lamberta estado) {
+	static char representacoes[] = {
+		[O] = 'O',
+		[X] = 'X'
+	};
+	return representacoes[estado];
+}
+
 /* Implementação do procedimento MostraLamberta */
-
-
 void
 MostraLamberta(int *tabuleiro, int n) {
-	printf("%d\n", tabuleiro[n - 1]);
+	int i;
+
+	for(i = 0; i < n; i++) {
+		printf("%c", estado_para_caracter(tabuleiro[i]));
+	}
+	printf("\n");
 }
 
 

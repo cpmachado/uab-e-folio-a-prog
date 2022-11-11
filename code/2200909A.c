@@ -15,7 +15,7 @@ enum estados_lamberta {
 /* FUNÇÕES */
 
 char
-estado_para_caracter(enum estados_lamberta estado) {
+EstadoParaCaracter(enum estados_lamberta estado) {
 	static char representacoes[] = {
 		[O] = 'O',
 		[X] = 'X'
@@ -29,7 +29,7 @@ MostraLamberta(int *tabuleiro, int n) {
 	int i;
 
 	for(i = 0; i < n; i++) {
-		printf("%c", estado_para_caracter(tabuleiro[i]));
+		printf("%c", EstadoParaCaracter(tabuleiro[i]));
 	}
 	printf("\n");
 }

@@ -1,4 +1,5 @@
-MAIN=main.tex
+MAIN=2200909efolioA.tex
+SRC=$(wildcard *.tex)
 LATEX=latexmk -pdf
 LATEX_CLEAN=latexmk -c
 LATEX_WATCH=latexmk -pdf -pvc
@@ -7,7 +8,7 @@ all:
 	${LATEX} ${MAIN}
 
 clean:
-	${LATEX_CLEAN} ${MAIN}
+	$(foreach file,${SRC}, ${LATEX_CLEAN} ${file};)
 
 watch:
 	${LATEX_WATCH} ${MAIN}

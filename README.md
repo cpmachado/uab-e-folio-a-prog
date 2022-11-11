@@ -1,6 +1,7 @@
-# uab-efolio-template
+# uab-efolio-a-prog
 
-Template em $\LaTeX$ para os e-fólios da Universidade Aberta(UAb).
+Resolução do e-fólio A da cadeira "Programação" da
+Universidade Aberta(UAb) do primeiro semestre de 2022/2023.
 
 ## Licença
 

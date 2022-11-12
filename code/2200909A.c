@@ -6,6 +6,7 @@
 /* CONSTANTES */
 #define BUFFER 100
 
+
 enum estados_lamberta {
 	O = 0,
 	X = 1
@@ -23,7 +24,7 @@ EstadoParaCaracter(enum estados_lamberta estado) {
 	return representacoes[estado];
 }
 
-/* Implementação do procedimento MostraLamberta */
+
 void
 MostraLamberta(int *tabuleiro, int n) {
 	int i;

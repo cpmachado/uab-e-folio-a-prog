@@ -12,6 +12,9 @@ all: ${BIN}
 clean:
 	@rm -rf ${BIN} ${OBJ} ${DEP}
 
+lint:
+	$(foreach file,${SRC}, ./res/qa-efolio ${file};)
+
 %:
 	${CC} -o $@ $< ${LDFLAGS}
 

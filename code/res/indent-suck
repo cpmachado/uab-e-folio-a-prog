@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+indent $1 -brs -nprs -npcs -i8 -fc1 -br -brf -nsaf -nsai -nsaw -ncs \
+	-nfca -il0 -ce -nss -c0 -cd0 -ut -o out.c

@@ -59,7 +59,7 @@ MostraLamberta(int *tabuleiro, int n) {
 	int i;
 
 	for(i = 0; i < n; i++) {
-		printf("%c", EstadoParaCaracter(tabuleiro[i]));
+		printf("%c", EstadoLambertaParaCaracter(tabuleiro[i]));
 	}
 	printf("\n");
 }

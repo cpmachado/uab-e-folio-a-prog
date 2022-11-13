@@ -1,4 +1,15 @@
-/* HEADERS */
+/*
+ * Programa: 2200909A
+ * Descrição: |
+ *   Programa que lê um tabuleiro de Lamberta em binário, e imprime o
+ *   tabuleiro correspondente.
+ *
+ *   Mapa de tradução de estados:
+ *   | binário | Estado |
+ *   | 0       | O      |
+ *   | 1       | X      |
+ */
+/* CABEÇALHOS */
 #include <stdio.h>
 #include <string.h>
 
@@ -7,6 +18,7 @@
 #define BUFFER 100
 
 
+/* Enumeração para os estados diferentes de uma célula de Lamberta */
 enum estados_lamberta {
 	O = 0,
 	X = 1
@@ -15,8 +27,17 @@ enum estados_lamberta {
 
 /* FUNÇÕES */
 
+/*
+ * Nome: EstadoLambertaParaCaracter
+ * Descrição: |
+ *   Função que traduz representação de estado de Lamberta para carácter
+ * Input:
+ *   - estado(enum estados_lamberta): Estado associado
+ * Retorna:
+ *   - (char) representação em carácter
+ */
 char
-EstadoParaCaracter(enum estados_lamberta estado) {
+EstadoLambertaParaCaracter(enum estados_lamberta estado) {
 	static char representacoes[] = {
 		[O] = 'O',
 		[X] = 'X'
@@ -25,6 +46,14 @@ EstadoParaCaracter(enum estados_lamberta estado) {
 }
 
 
+/*
+ * Nome: MostraLamberta
+ * Descrição: Função que imprime o tabuleiro de Lamberta
+ * Input:
+ *   - tabuleiro(int): Tabuleiro que contém as posições
+ *   - n(int): Dimensão do tabuleiro
+ * Retorna: (void)
+ */
 void
 MostraLamberta(int *tabuleiro, int n) {
 	int i;

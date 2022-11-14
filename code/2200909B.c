@@ -88,11 +88,7 @@ PreencheLamberta(int *tabuleiro, int n) {
 	int i;
 
 	for(i = 0; i < n; i++) {
-		if(randaux() % 2 == 0) {
-			tabuleiro[i] = O;
-		} else {
-			tabuleiro[i] = X;
-		}
+		tabuleiro[i] = randaux() % 2;
 	}
 }
 

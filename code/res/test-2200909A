@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
 
+echo "----------"
+echo "Test 1"
+echo "----------"
 diff test/2200909A/out1.txt <(./2200909A <test/2200909A/input1.txt)
+echo "----------"
+echo "Test 2"
+echo "----------"
 diff test/2200909A/out2.txt <(./2200909A <test/2200909A/input2.txt)
+echo "----------"

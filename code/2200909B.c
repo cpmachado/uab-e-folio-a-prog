@@ -15,13 +15,38 @@
 
 
 /* Enumeração para os estados diferentes de uma célula de Lamberta */
-enum estados_lamberta {
-	O = 0,
-	X = 1
+enum lamberta_estados {
+	LAMBERTA_O = 0,
+	LAMBERTA_X = 1,
+	LAMBERTA_DESCONHECIDO = 2
 };
 
-
 /* FUNÇÕES */
+
+/* -- Mapeadores -- */
+
+/*
+ * Nome: LambertaEstadoParaCaracter
+ * Descrição: |
+ *   Função que traduz representação de estado de Lamberta para carácter
+ * Input:
+ *   - estado(enum lamberta_estados): Estado associado
+ * Retorna:
+ *   - (char) representação em carácter
+ */
+char
+LambertaEstadoParaCaracter(enum lamberta_estados estado) {
+	switch (estado) {
+	case LAMBERTA_O:
+		return 'O';
+	case LAMBERTA_X:
+		return 'X';
+	default:
+		return 'U';
+	}
+}
+
+/* -- UTILITÁRIOS -- */
 
 /*
  * Nome: randaux
@@ -35,43 +60,6 @@ unsigned int
 randaux(void) {
 	static long seed = 1;
 	return (((seed = seed * 214013L + 2531011L) >> 16) & 0x7fff);
-}
-
-/*
- * Nome: EstadoLambertaParaCaracter
- * Descrição: |
- *   Função que traduz representação de estado de Lamberta para carácter
- * Input:
- *   - estado(enum estados_lamberta): Estado associado
- * Retorna:
- *   - (char) representação em carácter
- */
-char
-EstadoLambertaParaCaracter(enum estados_lamberta estado) {
-	static char representacoes[] = {
-		[O] = 'O',
-		[X] = 'X'
-	};
-	return representacoes[estado];
-}
-
-
-/*
- * Nome: MostraLamberta
- * Descrição: Função que imprime o tabuleiro de Lamberta
- * Input:
- *   - tabuleiro(int): Tabuleiro que contém as posições
- *   - n(int): Dimensão do tabuleiro
- * Retorna: (void)
- */
-void
-MostraLamberta(int *tabuleiro, int n) {
-	int i;
-
-	for(i = 0; i < n; i++) {
-		printf("%c", EstadoLambertaParaCaracter(tabuleiro[i]));
-	}
-	printf("\n");
 }
 
 
@@ -88,8 +76,32 @@ PreencheLamberta(int *tabuleiro, int n) {
 	int i;
 
 	for(i = 0; i < n; i++) {
-		tabuleiro[i] = randaux() % 2;
+		if(randaux() % 2 == 1) {
+			tabuleiro[i] = LAMBERTA_X;
+		} else {
+			tabuleiro[i] = LAMBERTA_O;
+		}
 	}
+}
+
+/* -- I/O -- */
+
+/*
+ * Nome: MostraLamberta
+ * Descrição: Função que imprime o tabuleiro de Lamberta
+ * Input:
+ *   - tabuleiro(int): Tabuleiro que contém as posições
+ *   - n(int): Dimensão do tabuleiro
+ * Retorna: (void)
+ */
+void
+MostraLamberta(int *tabuleiro, int n) {
+	int i;
+
+	for(i = 0; i < n; i++) {
+		printf("%c", LambertaEstadoParaCaracter(tabuleiro[i]));
+	}
+	printf("\n");
 }
 
 

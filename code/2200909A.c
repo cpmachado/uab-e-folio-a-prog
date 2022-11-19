@@ -19,32 +19,60 @@
 
 
 /* Enumeração para os estados diferentes de uma célula de Lamberta */
-enum estados_lamberta {
-	O = 0,
-	X = 1
+enum lamberta_estados {
+	LAMBERTA_O = 0,
+	LAMBERTA_X = 1,
+	LAMBERTA_DESCONHECIDO = 2
 };
 
 
 /* FUNÇÕES */
 
+/* -- Mapeadores -- */
+
 /*
- * Nome: EstadoLambertaParaCaracter
+ * Nome: LambertaEstadoParaCaracter
  * Descrição: |
  *   Função que traduz representação de estado de Lamberta para carácter
  * Input:
- *   - estado(enum estados_lamberta): Estado associado
+ *   - estado(enum lamberta_estados): Estado associado
  * Retorna:
  *   - (char) representação em carácter
  */
 char
-EstadoLambertaParaCaracter(enum estados_lamberta estado) {
-	static char representacoes[] = {
-		[O] = 'O',
-		[X] = 'X'
-	};
-	return representacoes[estado];
+LambertaEstadoParaCaracter(enum lamberta_estados estado) {
+	switch (estado) {
+	case LAMBERTA_O:
+		return 'O';
+	case LAMBERTA_X:
+		return 'X';
+	default:
+		return 'U';
+	}
 }
 
+/*
+ * Nome: CaracterParaLambertaEstado
+ * Descrição: |
+ *   Função que traduz representação de carácter para estado de Lamberta
+ * Input:
+ *   - caracter(char) representação em carácter
+ * Retorna:
+ *   - (enum lamberta_estados): Estado associado
+ */
+enum lamberta_estados
+CaracterParaLambertaEstado(char caracter) {
+	switch (caracter) {
+	case '0':
+		return LAMBERTA_O;
+	case '1':
+		return LAMBERTA_X;
+	default:
+		return LAMBERTA_DESCONHECIDO;
+	}
+}
+
+/* -- I/O -- */
 
 /*
  * Nome: MostraLamberta
@@ -59,7 +87,7 @@ MostraLamberta(int *tabuleiro, int n) {
 	int i;
 
 	for(i = 0; i < n; i++) {
-		printf("%c", EstadoLambertaParaCaracter(tabuleiro[i]));
+		printf("%c", LambertaEstadoParaCaracter(tabuleiro[i]));
 	}
 	printf("\n");
 }
@@ -74,11 +102,7 @@ main(void) {
 	tamanho = strlen(str);
 
 	for(i = 0; i < tamanho; i++) {
-		if(str[i] == '0') {
-			tabuleiro[i] = 0;
-		} else {
-			tabuleiro[i] = 1;
-		}
+		tabuleiro[i] = CaracterParaLambertaEstado(str[i]);
 	}
 
 	MostraLamberta(tabuleiro, tamanho);

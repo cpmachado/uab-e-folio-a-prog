@@ -1,7 +1,7 @@
 include config.mk
 
 
-SRC = ${wildcard *.c}
+SRC = ${wildcard 2200909*.c}
 OBJ = ${SRC:.c=.o}
 DEP = ${SRC:.c=.d}
 BIN = ${SRC:.c=}

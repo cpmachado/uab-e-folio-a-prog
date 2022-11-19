@@ -1,0 +1,13 @@
+         1
+123456789012
+OXOOOOOXXXXX
+Jogada [1]:1 10
+         1
+123456789012
+XOXXXXXOOOXX
+Jogada [2]:5 4
+         1
+123456789012
+XOXXOOOXOOXX
+Jogada [3]:6 2
+Jogada inválida, perde jogador 1.

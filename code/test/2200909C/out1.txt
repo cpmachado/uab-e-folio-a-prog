@@ -1,0 +1,22 @@
+123456789
+XXOOXOOOO
+Jogada [1]: 4 5
+123456789
+XXOXOXXXO
+Jogada [2]: 2 1
+123456789
+XOOXOXXXO
+Jogada [3]: 3 4
+123456789
+XOXOXOXXO
+Jogada [4]: 1 5
+123456789
+OXOXOOXXO
+Jogada [5]: 3 3
+123456789
+OXXOXOXXO
+Jogada [6]: 2 2
+123456789
+OOOOXOXXO
+Jogada [7]: 4 5
+Jogada inválida, perde jogador 1.

@@ -1,19 +1,8 @@
 #!/usr/bin/env bash
 
+for i in {1..4}; do
 echo "----------"
-echo "Test 1"
+echo "Test $i"
 echo "----------"
-diff test/2200909B/out1.txt <(./2200909B <test/2200909B/input1.txt)
-echo "----------"
-echo "Test 2"
-echo "----------"
-diff test/2200909B/out2.txt <(./2200909B <test/2200909B/input2.txt)
-echo "----------"
-echo "Test 3"
-echo "----------"
-diff test/2200909B/out3.txt <(./2200909B <test/2200909B/input3.txt)
-echo "----------"
-echo "Test 4"
-echo "----------"
-diff test/2200909B/out4.txt <(./2200909B <test/2200909B/input4.txt)
-echo "----------"
+diff test/2200909B/out$i.txt <(./2200909B <test/2200909B/input$i.txt)
+done

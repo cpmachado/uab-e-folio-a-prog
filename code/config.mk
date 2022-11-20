@@ -6,3 +6,7 @@ CPPFLAGS =\
 	-D_POSIX_C_SOURCE=200809L
 OUTPUT_OPTION = -MMD -MP
 LDFLAGS = -lm
+
+# gcov
+CFLAGS  += -fprofile-arcs -ftest-coverage
+LDFLAGS  += -fprofile-arcs -ftest-coverage

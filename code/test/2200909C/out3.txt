@@ -1,0 +1,4 @@
+123456789
+XXOOXOOOO
+Jogada [1]: -1 5
+Jogada inválida, perde jogador 1.

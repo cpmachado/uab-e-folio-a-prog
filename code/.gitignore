@@ -3,6 +3,9 @@
 2200909C
 2200909D
 
+*.gcov
+*.gcda
+*.gcno
 
 # output of indent
 out.c

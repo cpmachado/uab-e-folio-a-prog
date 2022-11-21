@@ -1,1 +1,124 @@
 \section*{Trabalho/Resolução:}
+
+\subsection*{Introdução}
+
+\paragraph{}O e-fólio A da cadeira de Programação, pretendia a avaliação dos
+conhecimentos adquiridos, através da implementação de um jogo original,
+intitulado de "Lamberta". Para tal, foram fornecidos 4 exercícios com
+objectivos diferentes, de modo a implementação ser iterativa.
+
+\paragraph{}O presente relatório é dividido sobre notas de implementação por
+alínea. Foram concluídas todas as alíneas com sucesso, com cada ficheiro de
+código fonte foi também apropriadamente comentado.
+
+\subsection{}
+
+\paragraph{} Na alínea (a) foi requerido um programa que recebe-se de
+input uma sequência binária, e que traduzi-se a mesma para impressão como se
+fosse um tabuleiro.
+
+\paragraph{} Para tal, definiu-se o mapeamento dos estados do jogo da
+Lamberta:
+
+\begin{center}
+\begin{tabular}{c|c}
+	Input & Carácter/Estado \\
+	\hline
+	0 & O \\
+	1 & X \\
+\end{tabular}
+\end{center}
+
+\paragraph{} Para resolução do exercício, além de se implementar a função
+"MostraLamberta", implementaram-se:
+
+\begin{itemize}
+	\item enum lamberta\_estados: Um enumerado com os estado possíveis, e a
+		salvaguarda de um estado desconhecido.
+	\item CaracterParaLambertaEstado: Uma função que traduz do carácter
+		binário da entrada para a representação dos estados.
+	\item LambertaEstadoParaCaracter: Uma função que traduz da representação
+		interna dos estados para o carácter de estado(X ou O).
+\end{itemize}
+
+\paragraph{}Sendo que funcionalidade era relativamente simples, não foram
+implementados mais testes.
+
+\newpage
+
+\subsection{}
+
+\paragraph{} Na alínea (b) foi requerido um programa que recebe-se o tamanho
+do tabuleiro e o número de chamadas a descartar, de uma função de geração de
+números pseudo aleatórios fornecidos pela docência(randaux). Com base nesta
+função dever-se-ia preencher a representação do tabuleiro.
+
+\paragraph{} Esquema de mapeamento em função de randaux, baseado na paridade
+do seu retorno:
+
+
+\begin{center}
+\begin{tabular}{c|c}
+	paridade do retorno de randaux & Estado \\
+	\hline
+	par & O \\
+	ímpar & X \\
+\end{tabular}
+\end{center}
+
+\paragraph{} Para a resolução do exercício implementou-se a função:
+PreencheLamberta.
+
+\paragraph{} Removeu-se a função CaracterParaLambertaEstado, uma vez que se
+tornou desnecessária.
+
+\newpage
+
+\subsection{}
+
+\paragraph{} Na alínea (c) foi requerido a implementação do jogo "Lamberta"
+para dois jogadores humanos, sendo que recebem o input por turno.
+
+\paragraph{} Para a implementação deste programa mudou-se a representação do
+tabuleiro, do vector simples de inteiros anterior, para um tipo abstracto de
+dados(TAD) que contém todo o estado do tabuleiro. Das operações implementadas
+para este tipo incluiu-se também uma função que testa a validade de uma
+jogada.
+
+\paragraph{} Dados da estrutura do tabuleiro:
+
+\begin{itemize}
+\item tabuleiro(int*): armazenamento dos estados do tabuleiro
+\item tamanho(int): tamanho do tabuleiro
+\item jogada(int): contador da jogada
+\item segmento\_maximo(int): tamanho máximo do segmento de uma dada jogada
+\end{itemize}
+
+\paragraph{} Separou-se a validação de uma jogada da aplicação da mesma, para
+ter um padrão mais conveniente para gerir o fluxo de jogo.
+
+\paragraph{} Além dos testes fornecidos, testou-se os limites todos da
+validação de uma jogada, que se entende por índice base, tamanho, e a
+combinação de ambos face ao tamanho do tabuleiro. Além de obviamente de um
+dado segmento possuir uma célula com o estado X.
+
+\newpage
+
+\subsection{}
+
+\paragraph{} Na alínea (d) foi requerido a implementação do jogo "Lamberta"
+para dois jogadores autónomos, com base num algoritmo fornecido.
+
+\paragraph{} Em comparação com a alínea (c), procedeu-se aos seguintes passos:
+
+\begin{itemize}
+\item Substituição da função que gere a entrada da jogada, por uma função
+	que implementa ordenadamente as regras descritas do algoritmo.
+\item Implementação de funções que implementassem cada regra, assim como
+	funções utilitárias, que permitissem a sua implementação efectivamente,
+	eficientemente e expressivamente.
+\end{itemize}
+
+\paragraph{} O único teste que foi feito para estender a cobertura garantida
+pelos exemplos, foi o input "5 1", que garante a validação da regra 2.
+

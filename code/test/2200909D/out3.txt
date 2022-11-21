@@ -1,0 +1,10 @@
+12345
+XOOXO
+Jogada [1]: -regra 4- 1 4
+12345
+OXXOO
+Jogada [2]: -regra 2- 2 2
+12345
+OOOOO
+Jogada [3]: -regra 5- 1 1
+Jogada inválida, perde jogador 1.

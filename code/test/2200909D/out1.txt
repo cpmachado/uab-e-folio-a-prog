@@ -1,0 +1,43 @@
+123456789
+XXOOXOOOO
+Jogada [1]: -regra 4- 1 8
+123456789
+OOXXOXXXO
+Jogada [2]: -regra 4- 1 7
+123456789
+XXOOXOOXO
+Jogada [3]: -regra 4- 4 6
+123456789
+XXOXOXXOX
+Jogada [4]: -regra 4- 2 5
+123456789
+XOXOXOXOX
+Jogada [5]: -regra 4- 1 4
+123456789
+OXOXXOXOX
+Jogada [6]: -regra 4- 1 3
+123456789
+XOXXXOXOX
+Jogada [7]: -regra 3- 1 2
+123456789
+OXXXXOXOX
+Jogada [8]: -regra 1- 2 1
+123456789
+OOXXXOXOX
+Jogada [9]: -regra 1- 3 1
+123456789
+OOOXXOXOX
+Jogada [10]: -regra 1- 4 1
+123456789
+OOOOXOXOX
+Jogada [11]: -regra 1- 5 1
+123456789
+OOOOOOXOX
+Jogada [12]: -regra 1- 7 1
+123456789
+OOOOOOOOX
+Jogada [13]: -regra 1- 9 1
+123456789
+OOOOOOOOO
+Jogada [14]: -regra 5- 1 1
+Jogada inválida, perde jogador 2.

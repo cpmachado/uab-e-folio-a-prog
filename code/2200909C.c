@@ -1,9 +1,7 @@
 /*
- * Programa: 2200909B
+ * Programa: 2200909C
  * Descrição: |
- *   Programa que lê a dimensão do tabuleiro, e um certo número de "saltos"
- *   para discartar valores da função randaux.
- *   Imprime o tabuleiro gerado a partir da função PreencheLamberta.
+ *  Jogo de Lamberta para dois jogadores
  */
 /* CABEÇALHOS */
 #include <stdio.h>
@@ -11,6 +9,7 @@
 #include <string.h>
 
 /* CONSTANTES */
+
 /* Enumeração para os estados diferentes de uma célula de Lamberta */
 enum lamberta_estados {
 	LAMBERTA_O = 0,
@@ -19,6 +18,7 @@ enum lamberta_estados {
 };
 
 /* TIPOS */
+
 /* Lamberta: Tipo Abstracto de Dado para representação do tabuleiro */
 typedef struct Lamberta {
 	int *tabuleiro;
@@ -29,6 +29,7 @@ typedef struct Lamberta {
 
 
 /* OPERAÇÕES SOBRE LAMBERTA */
+
 /*
  * Nome: LambertaCria
  * Descrição: Cria instância que contém o estado do jogo, numa dada jogada
